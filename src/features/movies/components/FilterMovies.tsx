@@ -1,0 +1,71 @@
+import { useForm } from 'react-hook-form';
+import type { SubmitHandler } from 'react-hook-form';
+import type FilterMoviesDTO from '../models/FilterMoviesDTO.model';
+import type Genre from '../../genres/models/Genre.model';
+import Button from '../../../components/Button';
+
+export default function FilterMovies() {
+    const initialValues:FilterMoviesDTO={
+    title:'',
+    genreId:0,
+    upcomingReleases:false,
+    inTheaters:false
+    }
+    const {register,handleSubmit,reset,formState:{isSubmitting}}=useForm<FilterMoviesDTO>({
+        defaultValues:initialValues
+    });
+    const genreList:Genre[]=[
+        { 
+            id:1,
+            name:'Action'
+        },
+        {
+            id:2,
+            name:'Comedy'
+        }
+    ]
+    const onSubmit:SubmitHandler<FilterMoviesDTO>=async (data)=>{
+            await new Promise(resolve=>setTimeout(resolve,2000));
+            console.log(data);
+           }
+    return (
+        <div>
+            <h1>Filter Movies</h1>
+            <form className='row row-cols-lg-auto g-3 align-items-center' onSubmit={handleSubmit(onSubmit)}> 
+                <div className='col-12'>
+                    <input className='form-control' placeholder='Title' {...register('title')}  autoComplete='off' />
+                </div>
+                <div className='col-12'>
+                    <select className='form-select' {...register('genreId')}>
+                       
+                         <option value="0">Select a genre</option>{
+                            genreList.map(genre=>(
+                                <option key={genre.id} value={genre.id}>{genre.name}</option>
+                            ))
+                        }
+                        </select>
+                </div>
+                <div className='col-12'>
+                    <div className='form-check form-check-inline'>
+                        <input className='form-check-input' type='checkbox' id='upcomingReleases' {...register('upcomingReleases')} />
+                        <label className='form-check-label' htmlFor='upcomingReleases'>Upcoming Releases</label>
+                    </div>
+                </div>
+                <div className='col-12'>
+                    <div className='form-check form-check-inline'>
+                        <input className='form-check-input' type='checkbox' id='inTheaters' {...register('inTheaters')} />
+                        <label className='form-check-label' htmlFor='inTheaters'>In Theaters</label>
+                    </div>
+                </div>
+                <div className='col-12'>
+                    <Button type='submit' disabled={isSubmitting}>
+                        {isSubmitting ? 'Filtering...' : 'Filter'}
+                    </Button>
+                    <Button onClick={()=>reset()} className='btn btn-danger ms-2' >
+                        Reset
+                    </Button>
+                </div>
+            </form>
+        </div>
+    );
+}
