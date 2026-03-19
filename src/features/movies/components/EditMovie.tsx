@@ -47,9 +47,9 @@ const [model,setModel]=useState<CreateMovie|undefined>(undefined);
                 ]
     return (
         <div>
-            <h1>Edit Movie :</h1>
+            <h1 className="font-serif text-2xl text-white italic">Edit Movie :</h1>
            {model?<MovieForm onSubmit={onSubmit} nonSelectedGenres={nonSelected} selectedGenres={selected} 
-                       nonSelectedTheatres={nonSelectedTheatres} selectedTheatres={SelectedTheatres} selectActors={Actors}
+                       nonSelectedTheatres={nonSelectedTheatres} selectedTheatres={SelectedTheatres} selectedActors={Actors}
                        />:<Loading/>} 
         </div>
     );

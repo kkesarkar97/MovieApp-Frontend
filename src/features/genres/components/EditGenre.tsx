@@ -23,7 +23,7 @@ export default function EditGenre() {
        },[id]);
     return (
         <div>
-            <h1>Edit Genre :</h1>
+            <h1 className="font-serif text-2xl text-white italic">Edit Genre :</h1>
            {model?<GenreForm onSubmit={onSubmit} model={{name:'Action'}}/>:<Loading/>} 
         </div>
     );

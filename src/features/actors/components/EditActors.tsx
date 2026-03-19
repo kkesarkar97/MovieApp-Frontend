@@ -31,7 +31,7 @@ export default function EditActors() {
            }
     return (
         <div>
-            <h1>Edit Actors</h1>
+            <h1 className='font-serif text-2xl text-white italic'>Edit Actors</h1>
             {model?<ActorForm onSubmit={onSubmit} model={model}/>:<Loading/>}
         </div>
     );

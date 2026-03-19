@@ -10,7 +10,7 @@ export default function CreateActors() {
        }
     return (
         <div>
-            <h1>Create Actors</h1>
+            <h1 className="font-serif text-2xl text-white italic">Create Actors</h1>
             <ActorForm onSubmit={onSubmit}/>
         </div>
     );

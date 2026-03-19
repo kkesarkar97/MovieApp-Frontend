@@ -10,7 +10,7 @@ export default function CreateTheater() {
        }
     return (
         <div>
-            <h1>Create Theater</h1>
+            <h1 className="font-serif text-2xl text-white italic">Create Theater</h1>
             <TheatreForm onSubmit={onSubmit} />
         </div>
     );

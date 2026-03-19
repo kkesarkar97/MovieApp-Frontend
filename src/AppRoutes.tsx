@@ -18,7 +18,7 @@ import HandleRouteNotFound from "./features/home/components/HandleRouteNotFound"
 
 export default function AppRoutes(){
     return(
-        <>
+        <div>
         <Routes>
             <Route path='/' element={<LandingPage />} />
             <Route path='/genres' element={<IndexGenres/>} />
@@ -36,6 +36,6 @@ export default function AppRoutes(){
             <Route path='/theaters/edittheater/:id' element={<EditTheater/>} />
                 <Route path='*' element={<HandleRouteNotFound/>} />
           </Routes>
-        </>
+        </div>
     )
 }

@@ -28,7 +28,7 @@ export default function EditTheater() {
 
     return (
         <div>
-            <h1>Edit Theatre :</h1>
+            <h1 className="font-serif text-2xl text-white italic">Edit Theatre :</h1>
             {model ? <TheatreForm onSubmit={onSubmit} model={model} /> : <Loading />}
         </div>
     );

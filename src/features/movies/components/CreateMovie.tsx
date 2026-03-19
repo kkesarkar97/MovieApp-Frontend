@@ -20,7 +20,7 @@ export default function CreateMovie() {
        
     return (
         <div>
-            <h1>Create Movie</h1>
+            <h1 className="font-serif text-2xl text-white italic">Create Movie</h1>
             <MovieForm onSubmit={onSubmit} nonSelectedGenres={nonSelected} selectedGenres={[]} 
             nonSelectedTheatres={nonSelectedTheatres} selectedTheatres={[]} selectedActors={[]}
             />

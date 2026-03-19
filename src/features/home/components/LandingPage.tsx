@@ -44,13 +44,13 @@ export const LandingPage:React.FC=()=>{
       },[]);
       
     return (
-        <>
-         <h1>Released Movies</h1>
+        <div>
+         <h1 className="font-serif text-2xl text-white italic">Released Movies</h1>
    <MovieList movies={movie.movieReleased} />
    <hr></hr>
-   <h1>Upcoming Movies</h1>
+   <h1 className="font-serif text-2xl text-white italic">Upcoming Movies</h1>
    <MovieList movies={movie.upComingMovies} />
-        </>
+        </div>
     );
 }
 

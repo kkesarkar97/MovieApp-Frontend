@@ -29,7 +29,7 @@ export default function FilterMovies() {
             console.log(data);
            }
     return (
-        <div>
+        <div className="font-serif text-2xl text-white italic">
             <h1>Filter Movies</h1>
             <form className='row row-cols-lg-auto g-3 align-items-center' onSubmit={handleSubmit(onSubmit)}> 
                 <div className='col-12'>
